@@ -1,24 +1,28 @@
-import { getSong } from '../../data/library';
+import { useEffect, useState } from 'react';
 
-export default function Home({ song }) {
-  console.log(song);
+export default function Song({ songId }) {
+  const [ song, setSong ] = useState({});
+  if (song) console.log(song);
+
+  useEffect(() => {
+    fetch(`/api/songs/${songId}`)
+    .then(res => res.json())
+    .then(data => setSong(data));
+  },[])
 
   return (
     <div>
-      <h1>My songs</h1>
-      <h1>{song.title}</h1>
+      <h1>{song?.title}</h1>
+      <h2>{song?.primary_artist?.name}</h2>
+      <p>Producers: {song?.producer_artists?.map((p,i) => i<song.producer_artists.length-1 ? `${p.name}, ` : `${p.name}`)}</p>
+      <p>Album: {song?.album?.name}</p>
+      <p>Lyrics</p>
+      <pre>{song?.lyrics}</pre>
     </div>
   );
 };
 
-export async function getServerSideProps(context) {
+Song.getInitialProps = async (context) =>{
   const { id } = context.query
-  let song;
-  try {
-    song = await getSong(id);
-  } catch (e) {
-    return { notFound: true }; // If something goes wrong, we return a 404 page
-  }
-  if (!song) return { notFound: true }; // If we don't get back an object, we return a 404 page
-  return { props: { song } };
+  return { songId: id }
 }
