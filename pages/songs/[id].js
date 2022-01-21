@@ -11,7 +11,7 @@ export default function Song({ songId }) {
   },[])
 
   return (
-    <div>
+    <div className='container'>
       <h1>{song?.title}</h1>
       <h2>{song?.primary_artist?.name}</h2>
       <p>Producers: {song?.producer_artists?.map((p,i) => i<song.producer_artists.length-1 ? `${p.name}, ` : `${p.name}`)}</p>
