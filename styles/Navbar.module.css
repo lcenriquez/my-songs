@@ -1,0 +1,14 @@
+.mainNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
+
+.navItems {
+  display: flex;
+  gap: 10px;
+}

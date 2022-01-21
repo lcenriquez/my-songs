@@ -1,0 +1,33 @@
+ul.suggestions{
+  background-color: white;
+  color: black;
+  border:1px solid #ccc;
+  height:auto;
+  padding:0px;
+  margin: 0px;
+  margin-top: -30px;
+  width: 60%;
+  align-self: center;
+  z-index: 0;
+  border-radius: 5px;
+ }
+ /* if you want style so that's why i use "li a" also */
+ ul.suggestions li, 
+ ul.suggestions li a{
+  background-color:#fff;
+  color:#000;
+  font-size:12px; /* according to your requirement */
+  font-family:arial;
+  font-weight:normal;
+  padding:0 10px;
+  margin:0px;
+  line-height:30px; /* according to your requirement */
+  display:block;
+  cursor:pointer;
+ }
+ ul.suggestions li:hover,
+ ul.suggestions li a:hover{
+  background-color:#ccc;
+  color:#000;
+  text-decoration:normal;
+ }
