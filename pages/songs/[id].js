@@ -5,7 +5,6 @@ import { addFavoriteSong } from "../../app/reducer";
 export default function Song({ songId }) {
   const dispatch = useDispatch();
   const [ song, setSong ] = useState({});
-  if (song) console.log(song);
 
   useEffect(() => {
     fetch(`/api/songs/${songId}`)

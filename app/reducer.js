@@ -14,10 +14,12 @@ export const favoriteSlice = createSlice({
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
-      state.songList = [...state.songList, action.payload]
+      if (state.songList.findIndex(song => +song.id === +action.payload.id) < 0) {
+        state.songList = [...state.songList, action.payload]
+      }
     },
     removeFavoriteSong: (state, action) => {
-      state.songList.filter(song => song.id !== action.payload)
+      state.songList = state.songList.filter(song => song.id !== action.payload)
     }
   }
 })

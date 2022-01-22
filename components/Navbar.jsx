@@ -10,7 +10,9 @@ export default function Navbar() {
         </Link>
       </div>
       <div className={style.navItems}>
-        <a>My favorite songs</a>
+        <Link href='/songs/favorites'>
+          <a>My favorite songs</a>
+        </Link>
       </div>
     </nav>
   );
