@@ -9,7 +9,7 @@ export default function Home() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    setResults(await fetch(`/api/search/?q=${query}`).then(res => res.json()));
+    setResults(await fetch(`/api/search?q=${query}`).then(res => res.json()));
   }
 
   return (
