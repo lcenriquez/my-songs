@@ -1,7 +1,7 @@
 import React from 'react';
 import Enzyme, { mount } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-import { render, fireEvent, cleanup } from '@testing-library/react';
+import { render, screen, fireEvent, cleanup } from '@testing-library/react';
 import Home from "../pages";
 import MainSearchBar from '../components/SearchBar/MainSearchBar';
 
@@ -10,16 +10,19 @@ Enzyme.configure({ adapter: new Adapter() });
 afterEach(cleanup);
 
 describe('Test MainSearchBar for basic functionality', () => {
-  const { getByTestId } = render(<Home><MainSearchBar /></Home>);
-  const mainSearchInput = getByTestId('mainSearchInput');
+  let mainSearchInput;
+  beforeEach(() => {
+    render(<Home><MainSearchBar /></Home>);
+    mainSearchInput = screen.getByTestId('mainSearchInput');
+  });
 
   it('has an empty initial value', () => {
     expect(mainSearchInput.value).toBe('');
   });
 
   it('changes value when user types on SearchBar', () => {
-    fireEvent.change(mainSearchInput, {target: {value: 'Test query'}})
-    expect(mainSearchInput.value).toBe('Test query');
+    fireEvent.change(mainSearchInput, {target: {value: 'test'}})
+    expect(mainSearchInput.value).toBe('test');
   });
 });
 
