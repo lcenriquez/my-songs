@@ -1,4 +1,4 @@
-import { getRandomPhoto } from "../data/test";
+import { getRandomPhoto } from "../data/mock";
 
 function SSG({ photo }) {
   return (
