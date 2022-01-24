@@ -13,7 +13,7 @@ export default function MainSearchBar({ handleSubmit, setQuery }) {
       <form className={style.mainForm} onSubmit={(e) => handleSubmit(e)}>
         <div className={style.tb}>
           <div className={style.td}>
-            <input type="text" className={style.mainInput} placeholder="Search" placeholder="Song name, artist, album, etc" onChange={(e) => handleChange(e)} data-testid="mainSearchInput" />
+            <input type="text" className={style.mainInput} placeholder="Search" placeholder="Song name, artist, album, etc" onChange={(e) => handleChange(e)} name="mainSearchInput" data-testid="mainSearchInput" />
           </div>
           <div className={style.td} id={style.s_cover}>
             <button className={style.mainButton} type="submit">
