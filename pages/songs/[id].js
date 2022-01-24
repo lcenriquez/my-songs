@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from "react-redux";
-import { addFavoriteSong } from "../../app/reducer";
+import { addFavoriteSong } from "../../redux/reducer";
 
 export default function Song({ songId }) {
   const dispatch = useDispatch();

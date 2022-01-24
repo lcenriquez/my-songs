@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import style from '../styles/SearchResults.module.css';
+import style from './SearchResults.module.css';
 
 export default function SearchResults({ results }) {
   let resultList = results.map(result => {

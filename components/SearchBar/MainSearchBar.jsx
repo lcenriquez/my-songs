@@ -1,4 +1,4 @@
-import style from '../styles/MainSearchBar.module.css';
+import style from './MainSearchBar.module.css';
 
 export default function MainSearchBar({ handleSubmit, setQuery }) {
   function handleChange(event) {

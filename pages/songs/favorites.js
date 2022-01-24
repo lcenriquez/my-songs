@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux"
-import { removeFavoriteSong } from "../../app/reducer";
+import { removeFavoriteSong } from "../../redux/reducer";
 
 export default function FavoriteSongs() {
   const dispatch = useDispatch();
